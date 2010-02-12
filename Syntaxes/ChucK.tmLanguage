@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -7,18 +7,56 @@
 		<string>ck</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>/\*\*|\{\s*$</string>
+	<string>\{|\/\*</string>
 	<key>foldingStopMarker</key>
-	<string>\*\*/|^\s*\}</string>
+	<string>\}|\*\/</string>
 	<key>name</key>
 	<string>ChucK</string>
 	<key>patterns</key>
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(if|while|for|return)\b</string>
+			<string>\/\/.*</string>
+			<key>name</key>
+			<string>comment.single.chuck</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\/\*</string>
+			<key>end</key>
+			<string>\*\/</string>
+			<key>name</key>
+			<string>comment.multiline.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(0[xX]\h(?&gt;_?\h)*|\d(?&gt;_?\d)*(\.(?![^[:space:][:digit:]])(?&gt;_?\d)*)?([eE][-+]?\d(?&gt;_?\d)*)?|0[bB][01]+|pi)\b</string>
+			<key>name</key>
+			<string>constant.numeric.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(null|NULL|true|false)\b</string>
+			<key>name</key>
+			<string>constant.language.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(then|before|after|at)\b</string>
+			<key>name</key>
+			<string>constant.other.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(while|until|repeat|break|continue|return|switch|repeat)</string>
 			<key>name</key>
 			<string>keyword.control.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\=\&gt;|\=\&lt;|\@\=\&gt;|\+|\+\+|\-|\-\-|\*|\/(?!\/)|\%|\+\=\&gt;|\-\=\&gt;|\*\=\&gt;|\/\=\&gt;|\%\=\&gt;|\=\=|\!\=|\&lt;|\&gt;|\&lt;\=|\&gt;\=|\&amp;\&amp;|\|\||\&lt;\&lt;|\&gt;\&gt;|\&amp;|\||\^|\$|::|\&lt;\&lt;\&lt;|\&gt;\&gt;\&gt;</string>
+			<key>name</key>
+			<string>keyword.operator.chuck</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -36,6 +74,48 @@
 					<string>constant.character.escaped.chuck</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(int|float|time|dur|void|same|for|if|else|class|extends|this|super|interface|implements|function|fun|spork|const|new|now|maybe|me|samp|ms|second|minute|hour|day|week)\b</string>
+			<key>name</key>
+			<string>storage.type.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(static|pure|protected|private|public)\b</string>
+			<key>name</key>
+			<string>storage.modifier.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(dac|adc|blackhole)\b</string>
+			<key>name</key>
+			<string>support.type.ugen.global.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(SinOsc|PulseOsc|SqrOsc|TriOsc|SawOsc|Phasor|Noise|Impulse|Step|Gain|SndBuf|HalfRect|FullRect|ZeroX|Mix2|Pan2|GenX|CurveTable|WarpTable|LiSa)\b</string>
+			<key>name</key>
+			<string>support.type.ugen.standart.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(OneZero|TwoZero|OnePole|TwoPole|PoleZero|BiQuad|Filter|LPF|HPF|BPF|BRF|ResonZ|Dyno)\b</string>
+			<key>name</key>
+			<string>support.type.ugen.filter.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(Envelope|ADSR|Delay|DelayA|DelayL|Echo|JCRev|NRev|PRCRev|Chorus|Modulate|PitShift|SubNoise|Blit|BlitSaw|BlitSquare|WvIn|WaveLoop|WvOut)\b</string>
+			<key>name</key>
+			<string>support.type.ugen.stk.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(StkInstrument|BandedWG|BlowBotl|BlowHole|Bowed|Brass|Clarinet|Flute|Mandolin|ModalBar|Moog|Saxofony|Shakers|Sitar|StifKarp|VoicForm|FM|BeeThree|FMVoices|HevyMetl|PercFlut|Rhodey|TubeBell|Wurley)\b</string>
+			<key>name</key>
+			<string>support.type.ugen.instrument.chuck</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
