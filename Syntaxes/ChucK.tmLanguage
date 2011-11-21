@@ -77,7 +77,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(int|float|time|dur|void|same|for|if|else|class|extends|this|super|interface|implements|function|fun|spork|const|new|now|maybe|me|samp|ms|second|minute|hour|day|week)\b</string>
+			<string>\b(int|float|time|dur|void|same|for|if|else|class|extends|this|super|interface|implements|spork|const|new|now|maybe|me|samp|ms|second|minute|hour|day|week)\b</string>
 			<key>name</key>
 			<string>storage.type.chuck</string>
 		</dict>
@@ -116,6 +116,89 @@
 			<string>\b(StkInstrument|BandedWG|BlowBotl|BlowHole|Bowed|Brass|Clarinet|Flute|Mandolin|ModalBar|Moog|Saxofony|Shakers|Sitar|StifKarp|VoicForm|FM|BeeThree|FMVoices|HevyMetl|PercFlut|Rhodey|TubeBell|Wurley)\b</string>
 			<key>name</key>
 			<string>support.type.ugen.instrument.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(Std)\b</string>
+			<key>name</key>
+			<string>support.class.chuck</string>
+		</dict>
+<!-- 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.chuck</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.chuck</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.chuck</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.chuck</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.chuck</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>match stuff like: fun void play_random() { ... }</string>
+			<key>match</key>
+			<string>(fun).*\s*(.*)\s*(.*)\s*(\().*?(\))</string>
+			<key>name</key>
+			<string>meta.function.chuck</string>
+		</dict> -->
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.chuck</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.chuck</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.chuck</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.chuck</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.chuck</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.chuck</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>match stuff like: fun void play() { … }</string>
+			<key>match</key>
+			<string>(function|fun)\s*(int|float|time|dur|void|same|for|if|else|class|extends|this|super|interface|implements|spork|const|new|now|maybe|me|samp|ms|second|minute|hour|day|week)\s*([a-zA-Z_?$][\w?$]*)(\()(.*?)(\))</string>
+			<key>name</key>
+			<string>meta.function.chuck</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
