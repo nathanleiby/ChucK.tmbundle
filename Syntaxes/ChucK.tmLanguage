@@ -170,24 +170,29 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.chuck</string>
+					<string>storage.modifier.chuck</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.chuck</string>
+					<string>storage.type.chuck</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.parameters.begin.chuck</string>
+					<string>entity.name.function.chuck</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.function.chuck</string>
+					<string>punctuation.definition.parameters.begin.chuck</string>
 				</dict>
 				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.chuck</string>
+				</dict>
+				<key>7</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.chuck</string>
@@ -196,7 +201,7 @@
 			<key>comment</key>
 			<string>match stuff like: fun void play() { … }</string>
 			<key>match</key>
-			<string>(function|fun)\s*(int|float|time|dur|void|same|for|if|else|class|extends|this|super|interface|implements|spork|const|new|now|maybe|me|samp|ms|second|minute|hour|day|week)\s*([a-zA-Z_?$][\w?$]*)(\()(.*?)(\))</string>
+			<string>(function|fun)\s*(static)?\s*(int|float|time|dur|void|same|for|if|else|class|extends|this|super|interface|implements|spork|const|new|now|maybe|me|samp|ms|second|minute|hour|day|week)\s*([a-zA-Z_?$][\w?$]*)(\()(.*?)(\))</string>
 			<key>name</key>
 			<string>meta.function.chuck</string>
 		</dict>
