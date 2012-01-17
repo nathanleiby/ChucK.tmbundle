@@ -14,7 +14,7 @@
 	<string>ChucK</string>
 	<key>patterns</key>
 	<array>
-		<dict>
+		<!-- <dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -37,8 +37,8 @@
 			<string>^\s*(package)\b(?:\s*([^ ;$]+)\s*(;)?)?</string>
 			<key>name</key>
 			<string>meta.package.chuck</string>
-		</dict>
-		<dict>
+		</dict> -->
+<!-- 		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -61,6 +61,42 @@
 			<string>^\s*(import)\b(?:\s*([^ ;$]+)\s*(;)?)?</string>
 			<key>name</key>
 			<string>meta.import.chuck</string>
+		</dict> -->
+		<dict>
+			<key>match</key>
+			<string>\b(dac|adc|blackhole)\b</string>
+			<key>name</key>
+			<string>support.class.ugen.global.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(SinOsc|PulseOsc|SqrOsc|TriOsc|SawOsc|Phasor|Noise|Impulse|Step|Gain|SndBuf|HalfRect|FullRect|ZeroX|Mix2|Pan2|GenX|CurveTable|WarpTable|LiSa)\b</string>
+			<key>name</key>
+			<string>support.class.ugen.standart.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(OneZero|TwoZero|OnePole|TwoPole|PoleZero|BiQuad|Filter|LPF|HPF|BPF|BRF|ResonZ|Dyno)\b</string>
+			<key>name</key>
+			<string>support.class.ugen.filter.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(Envelope|ADSR|Delay|DelayA|DelayL|Echo|JCRev|NRev|PRCRev|Chorus|Modulate|PitShift|SubNoise|Blit|BlitSaw|BlitSquare|WvIn|WaveLoop|WvOut)\b</string>
+			<key>name</key>
+			<string>support.class.ugen.stk.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(StkInstrument|BandedWG|BlowBotl|BlowHole|Bowed|Brass|Clarinet|Flute|Mandolin|ModalBar|Moog|Saxofony|Shakers|Sitar|StifKarp|VoicForm|FM|BeeThree|FMVoices|HevyMetl|PercFlut|Rhodey|TubeBell|Wurley)\b</string>
+			<key>name</key>
+			<string>support.class.ugen.instrument.chuck</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(Std)\b</string>
+			<key>name</key>
+			<string>support.class.chuck</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -585,7 +621,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(true|false|null)\b</string>
+					<string>\b(true|false|null|NULL)\b</string>
 					<key>name</key>
 					<string>constant.language.chuck</string>
 				</dict>
@@ -611,7 +647,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(\.)?\b([A-Z][A-Z0-9_]+)(?!&lt;|\.class|\s*\w+\s*=)\b</string>
+					<string>(\.)?\b(then|before|after|at)\b</string>
 					<key>name</key>
 					<string>constant.other.chuck</string>
 				</dict>
@@ -681,13 +717,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(return|break|case|continue|default|do|while|for|switch|if|else)\b</string>
+					<string>\b(until|repeat|return|break|case|continue|default|do|while|for|switch|if|else)\b</string>
 					<key>name</key>
 					<string>keyword.control.chuck</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(instanceof)\b</string>
+					<string>\b(\$|::)\b</string>
 					<key>name</key>
 					<string>keyword.operator.chuck</string>
 				</dict>
@@ -699,7 +735,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(=)</string>
+					<string>(\=\&gt;|\=\&lt;|\@\=\&gt;|\+\=\&gt;|\-\=\&gt;|\*\=\&gt;|\/\=\&gt;|\%\=\&gt;)</string>
 					<key>name</key>
 					<string>keyword.operator.assignment.chuck</string>
 				</dict>
@@ -711,7 +747,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(\-|\+|\*|\/|%)</string>
+					<string>(\-|\+|\*|\/(?!\/)|%|\&lt;\&lt;|\&gt;\&gt;|\&amp;|\||\^|\&lt;\&lt;\&lt;|\&gt;\&gt;\&gt;)</string>
 					<key>name</key>
 					<string>keyword.operator.arithmetic.chuck</string>
 				</dict>
@@ -721,12 +757,12 @@
 					<key>name</key>
 					<string>keyword.operator.logical.chuck</string>
 				</dict>
-				<dict>
+				<!-- <dict>
 					<key>match</key>
 					<string>(?&lt;=\S)\.(?=\S)</string>
 					<key>name</key>
 					<string>keyword.operator.dereference.chuck</string>
-				</dict>
+				</dict> -->
 				<dict>
 					<key>match</key>
 					<string>;</string>
@@ -1001,7 +1037,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(public|private|protected|static|final|native|synchronized|abstract|threadsafe|transient)\b</string>
+			<string>\b(static|pure|protected|private|public)\b</string>
 		</dict>
 		<key>strings</key>
 		<dict>
