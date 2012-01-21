@@ -63,42 +63,6 @@
 			<string>meta.import.chuck</string>
 		</dict> -->
 		<dict>
-			<key>match</key>
-			<string>\b(dac|adc|blackhole)\b</string>
-			<key>name</key>
-			<string>support.class.ugen.global.chuck</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(SinOsc|PulseOsc|SqrOsc|TriOsc|SawOsc|Phasor|Noise|Impulse|Step|Gain|SndBuf|HalfRect|FullRect|ZeroX|Mix2|Pan2|GenX|CurveTable|WarpTable|LiSa)\b</string>
-			<key>name</key>
-			<string>support.class.ugen.standart.chuck</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(OneZero|TwoZero|OnePole|TwoPole|PoleZero|BiQuad|Filter|LPF|HPF|BPF|BRF|ResonZ|Dyno)\b</string>
-			<key>name</key>
-			<string>support.class.ugen.filter.chuck</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(Envelope|ADSR|Delay|DelayA|DelayL|Echo|JCRev|NRev|PRCRev|Chorus|Modulate|PitShift|SubNoise|Blit|BlitSaw|BlitSquare|WvIn|WaveLoop|WvOut)\b</string>
-			<key>name</key>
-			<string>support.class.ugen.stk.chuck</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(StkInstrument|BandedWG|BlowBotl|BlowHole|Bowed|Brass|Clarinet|Flute|Mandolin|ModalBar|Moog|Saxofony|Shakers|Sitar|StifKarp|VoicForm|FM|BeeThree|FMVoices|HevyMetl|PercFlut|Rhodey|TubeBell|Wurley)\b</string>
-			<key>name</key>
-			<string>support.class.ugen.instrument.chuck</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(Std)\b</string>
-			<key>name</key>
-			<string>support.class.chuck</string>
-		</dict>
-		<dict>
 			<key>include</key>
 			<string>#code</string>
 		</dict>
@@ -494,6 +458,60 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>match</key>
+					<string>\b(dac|adc|blackhole)\b</string>
+					<key>name</key>
+					<string>support.class.ugen.global.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(SinOsc|PulseOsc|SqrOsc|TriOsc|SawOsc|Phasor|Noise|Impulse|Step|Gain|SndBuf|HalfRect|FullRect|ZeroX|Mix2|Pan2|GenX|CurveTable|WarpTable|LiSa)\b</string>
+					<key>name</key>
+					<string>support.class.ugen.standart.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(OneZero|TwoZero|OnePole|TwoPole|PoleZero|BiQuad|Filter|LPF|HPF|BPF|BRF|ResonZ|Dyno)\b</string>
+					<key>name</key>
+					<string>support.class.ugen.filter.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(Envelope|ADSR|Delay|DelayA|DelayL|Echo|JCRev|NRev|PRCRev|Chorus|Modulate|PitShift|SubNoise|Blit|BlitSaw|BlitSquare|WvIn|WaveLoop|WvOut)\b</string>
+					<key>name</key>
+					<string>support.class.ugen.stk.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(StkInstrument|BandedWG|BlowBotl|BlowHole|Bowed|Brass|Clarinet|Flute|Mandolin|ModalBar|Moog|Saxofony|Shakers|Sitar|StifKarp|VoicForm|FM|BeeThree|FMVoices|HevyMetl|PercFlut|Rhodey|TubeBell|Wurley)\b</string>
+					<key>name</key>
+					<string>support.class.ugen.instrument.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(Std|Machine|Math)\b</string>
+					<key>name</key>
+					<string>support.class.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(a(bs|to(i|f))|dbto(pow|rms)|f(abs|tom)|getenv|mtof|powtodb|r(and((2)?f)?(2)?|mstodb)|s(etenv|gn|ystem))\b(?=\()</string>
+					<key>name</key>
+					<string>support.function.std.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(add|crash|re(move|place)|s(tatus|pork))\b(?=\()</string>
+					<key>name</key>
+					<string>support.function.machine.chuck</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(a(sin|cos|tan(2)?)|c(os(h)?|eil)|exp|f(loor|mod)|hypot|is(inf|nan)|log(2|10)?|m(in|ax)|nextpow2|pow|r(ound|emainder)|s(in(h)?|qrt)|t(an(h)?|runc))\b(?=\()</string>
+					<key>name</key>
+					<string>support.function.math.chuck</string>
+				</dict>
+				<dict>
 					<key>include</key>
 					<string>#comments</string>
 				</dict>
@@ -545,6 +563,10 @@
 				<dict>
 					<key>include</key>
 					<string>#all-types</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#methods</string>
 				</dict>
 			</array>
 		</dict>
@@ -633,7 +655,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\b</string>
+					<string>\b(pi|(0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\b</string>
 					<key>name</key>
 					<string>constant.numeric.chuck</string>
 				</dict>
