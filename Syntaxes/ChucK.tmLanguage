@@ -796,7 +796,7 @@
 		<key>methods</key>
 		<dict>
 			<key>begin</key>
-			<string>(?!new)(?=\w.*\s+)(?=[^=]+\()</string>
+			<string>(?!new)(?=\w.*\s+)(?=\w.*\s+)(?=[^=]+\()</string>
 			<key>end</key>
 			<string>}|(?=;)</string>
 			<key>name</key>
@@ -804,8 +804,19 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#storage-modifiers</string>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>include</key>
+							<string>#storage-modifiers</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>include</key>
+							<string>#primitive-types</string>
+						</dict>
+					</dict>
 				</dict>
 				<dict>
 					<key>begin</key>
